@@ -17,7 +17,7 @@ class RoleController extends Controller
     {
         $roles      = Role::query()->get();
         $actions    = Action::query()->get();
-        
+
         return view('roles.index', compact('roles', 'actions')); 
     }
 
@@ -32,4 +32,7 @@ class RoleController extends Controller
         ]);
 
     }
+
+    
+
 }

@@ -23,6 +23,19 @@
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
+        <div class="form-group">
+            <label class="block font-medium text-sm text-gray-700" for="role_id">
+                سطح دسترسی
+            </label>
+            <select name="role_id" class='border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm' style="width: 100%">
+                <option value="">انتخاب سطح دسترسی</option>
+                @foreach($roles as $role)
+                    <option value="{{$role->id}}"
+                        {{$role->id == $user->role_id ? 'selected' : null}}>{{$role->name}}</option>
+                @endforeach
+            </select>
+        </div>
+      
         <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="email" />
