@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PaymentRequests\StorePaymentRequest;
+use App\Models\PaymentRequest;
 use App\Services\PaymentRequestService;
 
 class PaymentRequestController extends Controller
@@ -14,7 +15,9 @@ class PaymentRequestController extends Controller
 
     public function index()
     {
-
+        $paymentRequests = PaymentRequest::with(['user', 'creator'])->get();
+    
+        return view('payment_requests.index', compact('paymentRequests'));
     }
 
     public function create()
