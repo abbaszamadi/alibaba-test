@@ -9,7 +9,17 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <form action="">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                    <form action="{{route('payment_requests.store')}}" method="post" enctype="multipart/form-data">
+                       @csrf
                         <div class="form-group">
                             <label for="">مبلغ درخواستی:</label>
                             <input type="number" name="amount" class="form-control" min="0" placeholder="مبلغ">
@@ -19,6 +29,7 @@
                             <label for="">فایل ضمیمه</label>
                             <input type="file" name="appendix_file" >
                         </div>
+
                         <div class="form-group">
                             <label for="">طرف حساب پرداخت</label>
                             <select name="user_id" id="">
@@ -28,6 +39,8 @@
                                 @endforeach
                             </select>
                         </div>
+
+                        <button>submit</button>
                     </form>
                 </div>
             </div>
