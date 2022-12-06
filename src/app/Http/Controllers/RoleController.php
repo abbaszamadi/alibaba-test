@@ -8,6 +8,7 @@ use App\Models\Action;
 use App\Models\ActionsRole;
 use Illuminate\Http\Request;
 use App\Http\Requests\Roles\StoreRoleRequest;
+use App\Services\RoleService;
 
 class RoleController extends Controller
 {
@@ -16,6 +17,7 @@ class RoleController extends Controller
     {
         $roles      = Role::query()->get();
         $actions    = Action::query()->get();
+        
         return view('roles.index', compact('roles', 'actions')); 
     }
 
@@ -23,19 +25,11 @@ class RoleController extends Controller
 
     public function store(StoreRoleRequest $request)
     {
-        $role = Role::query()->create($request->validated());
+        (new RoleService)->create($request->all());   
 
-        $actions = $request->validated('actions');
-        foreach ($actions as $action)
-        {
-            ActionsRole::query()->firstOrCreate([
-                'role_id'   => $role->id,
-                'action_id' => $$action
-            ]);
-        }
         return redirect()->back()->with([
             'message'   => 'سطح دسترسی جدید با موفقیت ایجاد شد'
         ]);
-        
+
     }
 }
