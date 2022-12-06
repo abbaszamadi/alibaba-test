@@ -58,6 +58,16 @@
                     </form>
 
 
+
+                    <form action="{{route('payment_requests.destroy', $paymentRequest->id)}}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit">
+                            حذف کردن 
+                        </button>
+                    </form>
+
+
                 
 
 

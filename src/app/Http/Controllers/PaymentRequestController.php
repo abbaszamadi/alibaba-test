@@ -68,4 +68,15 @@ class PaymentRequestController extends Controller
 
 
 
+
+    public function destroy(PaymentRequest $paymentRequest)
+    {
+        $paymentRequest->delete();
+
+        return redirect()->route('payment_requests.index')->with([
+            'message'   => 'درخواست با موفقیت حذف شد.'
+        ]);
+        
+    }
+
 }
