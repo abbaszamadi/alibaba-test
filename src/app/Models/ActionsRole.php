@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ActionRole extends Model
+class ActionsRole extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['action_id', 'role_id'];
     
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('actions_roles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('permission_id');
+            $table->unsignedBigInteger('action_id');
             $table->unsignedBigInteger('role_id');
             $table->timestamps();
         });
