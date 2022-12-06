@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PaymentRequests\StorePaymentRequest;
+use App\Services\PaymentRequestService;
 
 class PaymentRequestController extends Controller
 {
@@ -25,10 +26,9 @@ class PaymentRequestController extends Controller
 
 
     public function store(StorePaymentRequest $request)
-    {
-        $data = $this->uploadFile($request->all());
-       
-        $request->user()->payment_requests()->create($data);
+    {       
+        (new PaymentRequestService)->create($request->user(), $request->all());
+
 
         return redirect()->route('payment_requests.index')->with([
             'result'    => true,
@@ -39,11 +39,6 @@ class PaymentRequestController extends Controller
 
 
 
-    private function uploadFile($data)
-    {
-        $data['appendix_file'] = Storage::putFile('payment_requests', $data['appendix_file']);
-        
-        return $data;
-    }
+
 
 }
