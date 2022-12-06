@@ -13,6 +13,10 @@ use App\Services\PaymentRequestService;
 class PaymentRequestController extends Controller
 {
     
+    public function __construct()
+    {
+        $this->authorizeResource(PaymentRequest::class, 'payment_request');
+    }
 
     public function index()
     {
@@ -76,7 +80,7 @@ class PaymentRequestController extends Controller
         return redirect()->route('payment_requests.index')->with([
             'message'   => 'درخواست با موفقیت حذف شد.'
         ]);
-        
+
     }
 
 }

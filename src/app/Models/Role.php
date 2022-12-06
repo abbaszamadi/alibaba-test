@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
+
     protected $fillable = ['name', 'description'];
+
+
+    public function actions()
+    {
+        return $this->belongsToMany(Action::class, 'actions_roles');
+    }
 }

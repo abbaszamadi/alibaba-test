@@ -7,6 +7,7 @@ use App\Models\PaymentRequest;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -50,4 +51,40 @@ class User extends Authenticatable
     {
         return $this->hasMany(PaymentRequest::class, 'creator_id', 'id');
     }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    public function hasAccess(User $user, $action = '')
+    {
+        $actions = $user->role->actions->pluck('name');
+ 
+        if ($actions)
+        {
+            if ( in_array($action, $actions->toArray()))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function hasLayoutAccess(User $user, $actions = [])
+    {
+        $actions = $user->role->actions->pluck('name');
+
+        if ($actions)
+        {
+            if (array_intersect($actions->toArray(), $actions) )
+            {
+                return  true;
+            }
+        }
+        return false;
+    }
+
+
 }
