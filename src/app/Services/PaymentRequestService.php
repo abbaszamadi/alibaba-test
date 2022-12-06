@@ -2,7 +2,9 @@
 namespace App\Services;
 
 use App\Models\User;
+use App\Models\PaymentRequest;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\File\File;
 
 class PaymentRequestService
 {
@@ -15,10 +17,20 @@ class PaymentRequestService
 
 
 
+
+    public function update(PaymentRequest $paymentRequest, $data)
+    {
+        if( isset($data['appendix_file']) and $data['appendix_file'] instanceof File)
+        { 
+            $data = $this->uploadFile($data);
+        }
+        return $paymentRequest->update($data);
+    }
     private function uploadFile($data)
     {
         $data['appendix_file'] = Storage::putFile('payment_requests', $data['appendix_file']);
         
         return $data;
     }
+
 }

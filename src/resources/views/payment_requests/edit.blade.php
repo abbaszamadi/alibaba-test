@@ -17,12 +17,14 @@
                             @endforeach
                         </ul>
                     </div>
-                    @endif
-                    <form action="{{route('payment_requests.store')}}" method="post" enctype="multipart/form-data">
-                       @csrf
+                @endif
+                    <form action="{{route('payment_requests.update', $paymentRequest->id)}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('put')
+                       
                         <div class="form-group">
                             <label for="">مبلغ درخواستی:</label>
-                            <input type="number" name="amount" class="form-control" min="0" placeholder="مبلغ">
+                            <input type="number" value="{{$paymentRequest->amount}}" name="amount" class="form-control" min="0" placeholder="مبلغ">
                         </div>
 
                         <div class="form-gorup">
@@ -34,12 +36,16 @@
                             <label for="">طرف حساب پرداخت</label>
                             <select name="user_id" id="">
                                 @foreach ($users as $user)
-                                    <option value="{{$user->id}}">{{$user->name}}</option>
-                                  
+                                    <option value="{{$user->id}}" 
+                                        {{$paymentRequest->user_id == $user->id ? 'selected' : null}}>{{$user->name}}</option>
+                            
                                 @endforeach
                             </select>
                         </div>
 
+                        <div>
+                            
+                        </div>
                         <button>submit</button>
                     </form>
                 </div>
