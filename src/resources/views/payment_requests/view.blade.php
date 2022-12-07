@@ -13,7 +13,6 @@
             <div class="demo-inline-spacing">
                 <h3 class="mb-75">جزئیات درخواست پراخت</h3>
 
-             
                 @if($paymentRequest->status == 'NOT_CHECKED')
                 <form action="{{route('payment_requests.update', $paymentRequest->id)}}" method="post" id="archive-form">
                     @csrf

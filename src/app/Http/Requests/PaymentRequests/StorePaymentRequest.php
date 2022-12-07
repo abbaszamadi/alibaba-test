@@ -25,6 +25,7 @@ class StorePaymentRequest extends FormRequest
     {
         return [
             'amount'    => ['required', 'numeric', "min:1", 'max:9223372036854775807'],
+            'user_id'   => ['required', 'numeric'],
             'appendix_file'      => ['required', 'file', 'mimetypes:application/pdf', 'between:1,10240']
         ];
     }
