@@ -17,17 +17,17 @@
                     @csrf
                     @method('patch')
                     <input type="hidden" name="status" value="1">
-                    <button type="button" class="btn btn-outline-success" id="archive-btn">
+                    <button type="submit" class="btn btn-outline-success" id="archive-btn">
                         <i data-feather='archive'></i>
                         <span>تایید</span>
                     </button>
                 </form>
 
-                <form action="{{route('payment_requests.index')}}" method="post" id="archive-form">
+                <form action="{{route('payment_requests.update', $paymentRequest->id)}}" method="post" id="archive-form">
                     @csrf
                     @method('patch')
                     <input type="hidden" name="status" value="2">
-                    <button type="button" class="btn btn-outline-warning" id="archive-btn">
+                    <button type="submit" class="btn btn-outline-warning" id="archive-btn">
                         <i data-feather='archive'></i>
                         <span>رد</span>
                     </button>
@@ -44,7 +44,7 @@
                 <form action="{{route('payment_requests.destroy', $paymentRequest->id)}}" method="post" id="delete-form">
                     @csrf
                     @method('delete')
-                    <button type="button" class="btn btn-outline-danger" id="delete-btn">
+                    <button type="submit" class="btn btn-outline-danger" id="delete-btn">
                         <i data-feather="trash" class="me-25"></i>
                         <span>حذف</span>
                     </button>

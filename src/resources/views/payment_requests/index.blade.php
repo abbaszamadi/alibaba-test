@@ -8,6 +8,10 @@
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">لیست درخواست ها</h4>
+
+          <a class='btn btn-primary' href="{{route('payment_requests.create')}}">
+            افزودن درخواست
+          </a>
         </div>
         <div class="card-body">
         
