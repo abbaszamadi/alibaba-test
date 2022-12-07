@@ -41,8 +41,7 @@ class PaymentRequest extends Model
 
     public function getAppendixUrlAttribute()
     {
-        //return Storage::url($this->appendix_file);
-        return Storage::path($this->appendix_file);
+        return Storage::url($this->appendix_file);
 
     }
 

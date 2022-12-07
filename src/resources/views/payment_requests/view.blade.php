@@ -101,6 +101,17 @@
             </span>
           </div>
 
+
+          <div class="mt-2">
+            <h5 class="mb-50">فایل ضمیمه :‌ </h5>
+            <p class="card-text mb-0">
+                <iframe src="{{$paymentRequest->appendix_url}}" 
+                style="width:100%; height:400px;" frameborder="0"></iframe>
+            </p>
+          </div>
+
+         
+
         </div>
       </div>
       <!--/ detail -->

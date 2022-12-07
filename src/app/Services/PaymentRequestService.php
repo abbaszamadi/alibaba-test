@@ -28,7 +28,7 @@ class PaymentRequestService
     }
     private function uploadFile($data)
     {
-        $data['appendix_file'] = Storage::putFile('payment_requests', $data['appendix_file']);
+        $data['appendix_file'] = Storage::putFile('documents', $data['appendix_file']);
         
         return $data;
     }
