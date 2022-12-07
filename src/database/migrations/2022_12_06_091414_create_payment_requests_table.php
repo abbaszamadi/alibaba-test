@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('payment_requests', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('amount');
-            $table->unsignedTinyInteger('status')->default(0);
+            $table->string('status')->default('NOT_CHECKED');
             $table->string('appendix_file', 512)->nullable();
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('creator_id')->nullable()->constrained('users')->nullOnDelete();

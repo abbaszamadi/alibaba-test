@@ -43,7 +43,17 @@
                             {{$paymentRequest->creator->name}}
                         </td>
                        
-                        <td><span class="badge rounded-pill badge-light-primary me-1">Active</span></td>
+                        <td>
+                            @if($paymentRequest->status == 'CONFIRMED')
+                            <span class="badge rounded-pill badge-light-success me-1">
+                            @elseif($paymentRequest->status == 'REJECTED')
+                            <span class="badge rounded-pill badge-light-danger me-1">
+                            @elseif($paymentRequest->status == 'NOT_CHECKED')
+                            <span class="badge rounded-pill badge-light-secondary me-1">
+                            @endif
+                            {{$paymentRequest->status_title}}
+                            </span>
+                        </td>
                        
                         <td>
                             {{$paymentRequest->created_at}}

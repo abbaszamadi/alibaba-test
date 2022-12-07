@@ -18,7 +18,7 @@ class UpdatePaymentRequest extends StorePaymentRequest
     {
         return array_merge(parent::rules(), [
             'amount'    => 'sometimes|required',
-            'status'    => 'sometimes|numeric',
+            'status'    => 'sometimes',
             'appendix_file'      => ['file', 'mimeTypes:application/pdf', 'nullable']
         ]);
     }

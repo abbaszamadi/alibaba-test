@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
+use App\Enums\PaymentRequestStatusEnums;
+
 
 class PaymentRequest extends Model
 {
@@ -24,6 +26,16 @@ class PaymentRequest extends Model
     {
         return $this->belongsTo(User::class, 'creator_id');
 
+    }
+
+
+    public function getStatusTitleAttribute()
+    {
+        return [
+            'CONFIRMED' => 'تایید شده',
+            'REJECTED'  => 'رد شده',
+            'NOT_CHECKED'   => 'در انتظار بررسی'
+        ][$this->status];
     }
 
 

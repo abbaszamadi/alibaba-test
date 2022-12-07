@@ -1,7 +1,7 @@
 @if(session('alert-success'))
 
 <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading"></h4>
+    <h4 class="alert-heading">Success</h4>
     <div class="alert-body">
      {{session('alert-success')}}
     </div>
