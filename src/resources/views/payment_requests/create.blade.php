@@ -14,7 +14,7 @@
           </div>
           <div class="card-body">
 
-            <form class="form form-vertical" action="{{route('payment_requests.store')}}" method="post">
+            <form class="form form-vertical" action="{{route('payment_requests.store')}}" method="post" enctype="multipart/form-data">
               @csrf
                 <div class="row">
                 <div class="col-12">
