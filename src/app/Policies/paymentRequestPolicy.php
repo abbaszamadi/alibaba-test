@@ -53,7 +53,8 @@ class paymentRequestPolicy
      */
     public function update(User $user, PaymentRequest $paymentRequest)
     {
-        return $user->hasAccess($user, 'payment_request_update');
+        return ($user->hasAccess($user, 'payment_request_update') &&
+            $paymentRequest->status == 'NOT_CHECKED');
     }
 
 
