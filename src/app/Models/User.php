@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function hasAccess(User $user, $action = '')
     {
-        $actions = $user->role->actions->pluck('name');
+        $actions = $user->role?->actions?->pluck('name');
  
         if ($actions)
         {
@@ -74,7 +74,7 @@ class User extends Authenticatable
 
     public function hasLayoutAccess(User $user, $actions = [])
     {
-        $actions = $user->role->actions->pluck('name');
+        $actions = $user->role?->actions?->pluck('name');
 
         if ($actions)
         {
