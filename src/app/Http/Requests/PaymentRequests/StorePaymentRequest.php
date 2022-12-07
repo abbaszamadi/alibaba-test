@@ -38,6 +38,11 @@ class StorePaymentRequest extends FormRequest
     }
 
     
+    /**
+     * Prepares values for validation.
+     *
+     * @return array
+     */
     public function prepareForValidation()
     {
         $this->merge([
@@ -45,6 +50,13 @@ class StorePaymentRequest extends FormRequest
         ]);
     }
 
+
+    /**
+     * Converts Persian and Arabic numbers to English.
+     *
+     * @param  original $number
+     * @return converted $number 
+     */
     private function num2en($number)
     {
         $persian_num = array('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹');
