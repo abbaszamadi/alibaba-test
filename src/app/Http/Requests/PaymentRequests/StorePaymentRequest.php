@@ -45,9 +45,13 @@ class StorePaymentRequest extends FormRequest
      */
     public function prepareForValidation()
     {
-        $this->merge([
-            'amount'  => $this->num2en($this->amount)
-        ]);
+        if($this->amount)
+        {
+            $this->merge([
+                'amount'  => $this->num2en($this->amount)
+            ]);
+        }
+
     }
 
 

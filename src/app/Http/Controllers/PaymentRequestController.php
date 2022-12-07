@@ -91,7 +91,6 @@ class PaymentRequestController extends Controller
     */
     public function update(UpdatePaymentRequest $request, PaymentRequest $paymentRequest)
     {
-     
         (new PaymentRequestService)->update($paymentRequest, $request->all());
         return redirect(route('payment_requests.show', $paymentRequest->id))
         ->with('alert-success', __('messages.payment_request_updated'));

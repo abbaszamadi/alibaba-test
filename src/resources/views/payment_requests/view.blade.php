@@ -6,6 +6,8 @@
     <!-- left profile info section -->
     <div class="col-lg-12 col-12 order-2 order-lg-1">
       <!-- detail -->
+<x-validation-errors ></x-validation-errros>
+
       <div class="card">
         <div class="card-header">
             <div class="demo-inline-spacing">
@@ -13,7 +15,6 @@
 
              
                 @if($paymentRequest->status == 'NOT_CHECKED')
-
                 <form action="{{route('payment_requests.update', $paymentRequest->id)}}" method="post" id="archive-form">
                     @csrf
                     @method('patch')
@@ -44,13 +45,14 @@
                     </button>
                 </form>
 
-                @endif
-
 
                 <a href="{{route('payment_requests.edit', $paymentRequest->id)}}" class="btn btn-outline-warning">
                     <i data-feather='edit-2'></i>
                     ویرایش
                 </a>
+
+                @endif
+
 
 
             </div>
