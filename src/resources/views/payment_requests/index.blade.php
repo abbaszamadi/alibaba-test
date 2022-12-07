@@ -7,333 +7,53 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Table head options</h4>
+          <h4 class="card-title">لیست درخواست ها</h4>
         </div>
         <div class="card-body">
-          <p class="card-text">
-            لیست درخواست ها
-          </p>
+        
         </div>
         <div class="table-responsive">
           <table class="table">
             <thead class="table-dark">
               <tr>
-                <th>Project</th>
-                <th>Client</th>
-                <th>Users</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th>مبلغ</th>
+                <th>کاربر طرف حساب</th>
+                <th>پشتیبان </th>
+                <th>وضعیت</th>
+                <th>تاریخ درخواست</th>
+
+                <th>گزینه ها</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <img
-                    src="../../../app-assets/images/icons/angular.svg"
-                    class="me-75"
-                    height="20"
-                    width="20"
-                    alt="Angular"
-                  />
-                  <span class="fw-bold">Angular Project</span>
-                </td>
-                <td>Peter Charls</td>
-                <td>
-                  <div class="avatar-group">
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Lilian Nenez"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Alberto Glotzbach"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Alberto Glotzbach"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                  </div>
-                </td>
-                <td><span class="badge rounded-pill badge-light-primary me-1">Active</span></td>
-                <td>
-                  <div class="dropdown">
-                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
-                      <i data-feather="more-vertical"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-                      <a class="dropdown-item" href="#">
-                        <i data-feather="edit-2" class="me-50"></i>
-                        <span>Edit</span>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i data-feather="trash" class="me-50"></i>
-                        <span>Delete</span>
-                      </a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../../../app-assets/images/icons/react.svg"
-                    class="me-75"
-                    height="20"
-                    width="20"
-                    alt="React"
-                  />
-                  <span class="fw-bold">React Project</span>
-                </td>
-                <td>Ronald Frest</td>
-                <td>
-                  <div class="avatar-group">
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Lilian Nenez"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Alberto Glotzbach"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Alberto Glotzbach"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                  </div>
-                </td>
-                <td><span class="badge rounded-pill badge-light-success me-1">Completed</span></td>
-                <td>
-                  <div class="dropdown">
-                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
-                      <i data-feather="more-vertical"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-                      <a class="dropdown-item" href="#">
-                        <i data-feather="edit-2" class="me-50"></i>
-                        <span>Edit</span>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i data-feather="trash" class="me-50"></i>
-                        <span>Delete</span>
-                      </a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../../../app-assets/images/icons/vuejs.svg"
-                    class="me-75"
-                    height="20"
-                    width="20"
-                    alt="Vuejs"
-                  />
-                  <span class="fw-bold">Vuejs Project</span>
-                </td>
-                <td>Jack Obes</td>
-                <td>
-                  <div class="avatar-group">
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Lilian Nenez"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Alberto Glotzbach"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Alberto Glotzbach"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                  </div>
-                </td>
-                <td><span class="badge rounded-pill badge-light-info me-1">Scheduled</span></td>
-                <td>
-                  <div class="dropdown">
-                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
-                      <i data-feather="more-vertical"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-                      <a class="dropdown-item" href="#">
-                        <i data-feather="edit-2" class="me-50"></i>
-                        <span>Edit</span>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i data-feather="trash" class="me-50"></i>
-                        <span>Delete</span>
-                      </a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../../../app-assets/images/icons/bootstrap.svg"
-                    class="me-75"
-                    height="20"
-                    width="20"
-                    alt="Bootstrap"
-                  />
-                  <span class="fw-bold">Bootstrap Project</span>
-                </td>
-                <td>Jerry Milton</td>
-                <td>
-                  <div class="avatar-group">
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Lilian Nenez"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Alberto Glotzbach"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                    <div
-                      data-bs-toggle="tooltip"
-                      data-popup="tooltip-custom"
-                      data-bs-placement="top"
-                      class="avatar pull-up my-0"
-                      title="Alberto Glotzbach"
-                    >
-                      <img
-                        src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
-                        alt="Avatar"
-                        height="26"
-                        width="26"
-                      />
-                    </div>
-                  </div>
-                </td>
-                <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
-                <td>
-                  <div class="dropdown">
-                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
-                      <i data-feather="more-vertical"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-                      <a class="dropdown-item" href="#">
-                        <i data-feather="edit-2" class="me-50"></i>
-                        <span>Edit</span>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i data-feather="trash" class="me-50"></i>
-                        <span>Delete</span>
-                      </a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
+
+                @foreach($paymentRequests as $paymentRequest)
+                    <tr>
+                        <td>
+                            {{$paymentRequest->amount}}
+                        </td>
+                        <td>
+                            {{$paymentRequest->user->name}}
+                        </td>
+                        <td>
+                            {{$paymentRequest->creator->name}}
+                        </td>
+                       
+                        <td><span class="badge rounded-pill badge-light-primary me-1">Active</span></td>
+                       
+                        <td>
+                            {{$paymentRequest->created_at}}
+                        </td>
+
+                        <td>
+                            <a href="{{route('payment_requests.show', $paymentRequest->id)}}">
+                                <button class="btn btn-primary">جزئیات</button>
+                            </a>
+                        </td>
+                    </tr>
+
+                @endforeach
+            
             </tbody>
           </table>
         </div>
