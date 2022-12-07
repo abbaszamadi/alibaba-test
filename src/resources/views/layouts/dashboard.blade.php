@@ -77,13 +77,11 @@
                     <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{$user->first_name}}</span><span class="user-status">{{$user->role? $user->role->name :  'کاربر عادی'}}</span></div><span class="avatar"><img class="round" src="{{ asset('dashboard-assets/app-assets') }}/images/portrait/small/abbas-avatar.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{route('profile.edit')}}">
                         <i class="me-50" data-feather="user"></i>پروفایل</a>
-                    <a class="dropdown-item" href="#">
-                        <i class="me-50" data-feather="mail"></i> پیام ها</a>
+                    
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <i class="me-50" data-feather="settings"></i> تنظیمات</a>
+                   
                     <a class="dropdown-item" href="">
                         <form action="{{route('logout')}}" method="post" style="display: inline">
                             @csrf
@@ -208,7 +206,7 @@
                                     </g>
                                 </g>
                             </svg></span>
-                    <h2 class="brand-text">سهند</h2>
+                    <h2 class="brand-text">Alibaba</h2>
                 </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
         </ul>
@@ -216,81 +214,24 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="dashboard-assetss">دسترسی سریع</span><span class="badge badge-light-warning rounded-pill ms-auto me-1">2</span></a>
-                <ul class="menu-content">
-                    <li class="{{$route == 'files.index' ? 'active' : null}}"><a class="d-flex align-items-center" href="{{route('files.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">لیست فایل ها</span></a>
-                    </li>
-                    <li><a class="d-flex align-items-center" href="{{route('applicants.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">لیست متقاضی ها</span></a>
-                    </li>
 
-                    <li><a class="d-flex align-items-center" href="{{route('applicants.archived')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce"> متقاضی های آرشیو شده</span></a>
-                    </li>
+         
 
-{{--                    <li><a class="d-flex align-items-center" href="{{route('roles.show', 3)}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">لیست متقاضی ها</span></a>--}}
-{{--                    </li>--}}
 
-                </ul>
+            <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">مالی</span><i data-feather="more-horizontal"></i>
             </li>
-            <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">هسته سیستم</span><i data-feather="more-horizontal"></i>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('payment_requests.index')}}"><i data-feather="mail">
+                </i><span class="menu-title text-truncate" data-i18n="Email">درخواست های پرداخت</span></a>
             </li>
-
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">فایل ها(ملک ها)</span></a>
-                <ul class="menu-content">
-                    <li>
-                        <a class="d-flex align-items-center" href="{{route('files.index', ['category_id' => 1])}}">
-                            <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="List"> رهن و اجاره</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="d-flex align-items-center" href="{{route('files.index', ['category_id' => 2])}}">
-                            <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="List">خرید و فروش</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="d-flex align-items-center" href="{{route('files.index', ['category_id' => 3])}}">
-                            <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="List">مشارکتی</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="d-flex align-items-center" href="{{route('files.archived')}}">
-                            <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="List">آرشیو شده</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </li>
-
-
-
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">ساختار سیستم</span></a>
-                <ul class="menu-content">
-                    <li class="{{in_array($route, ['files_types.index']) ? 'active' : null}}"><a class="d-flex align-items-center" href="{{route('files_types.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">انواع فایل ها</span></a>
-                    </li>
-                    <li class="{{in_array($route, ['attributes.index']) ? 'active' : null}}"><a class="d-flex align-items-center" href="{{route('attributes.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">فیلد ها</span></a>
-                    </li>
-
-                    <li class="{{in_array($route, ['zones.index']) ? 'active' : null}}"><a class="d-flex align-items-center" href="{{route('zones.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">مناطق</span></a>
-                    </li>
-
-
-                </ul>
-            </li>
-
-
+           
 
 
             <li class=" navigation-header"><span data-i18n="Misc">مدیریت</span><i data-feather="more-horizontal"></i>
             </li>
-            <li class="{{in_array($route, ['users.index'])? 'active' : null}} nav-item"><a class="d-flex align-items-center" href="{{route('users.index')}}" ><i data-feather="users"></i>
+            <li class="{{in_array($route, ['users.index'])? 'active' : null}} nav-item"><a class="d-flex align-items-center" href="{{route('dashboard')}}" ><i data-feather="users"></i>
                     <span class="menu-title text-truncate" data-i18n="Documentation">مدیریت کاربران</span></a>
             </li>
-            <li class="{{in_array($route, ['roles.index', 'roles.show'])? 'active' : null}} nav-item"><a class="d-flex align-items-center" href="{{route('roles.index')}}">
+            <li class="{{in_array($route, ['roles.index', 'roles.show'])? 'active' : null}} nav-item"><a class="d-flex align-items-center" href="{{route('dashboard')}}">
                     <i data-feather="life-buoy"></i>
                     <span class="menu-title text-truncate" data-i18n="Raise Support">مدیریت دسترسی ها</span></a>
             </li>
