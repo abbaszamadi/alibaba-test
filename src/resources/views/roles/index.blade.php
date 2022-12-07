@@ -34,12 +34,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
-                                    <span>{{$roles->count()}} کاربر </span>
-                                    <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-            
-                                        <a href="{{route('roles.show', $role->id)}}" class="btn btn-sm btn-outline-primary">کاربران</a>
-            
-                                    </ul>
+                                    <span>{{$role->users->count()}} کاربر </span>
+                       
                                 </div>
                                 <div class="d-flex justify-content-between align-items-end mt-1 pt-25">
                                     <div class="role-heading">

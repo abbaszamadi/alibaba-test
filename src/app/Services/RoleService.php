@@ -14,6 +14,21 @@ class RoleService
     }
 
 
+    public function update($role, $data)
+    {
+        ActionsRole::query()->where('role_id', $role->id)->delete();
+
+        foreach ($data['actions'] as $action)
+        {
+            ActionsRole::query()->create([
+                'role_id'       => $role->id,
+                'action_id' => $action
+            ]);
+        }
+    
+    }
+
+
     private function addActionsToRole($roleId, $actions)
     {
         foreach ($actions as $action)

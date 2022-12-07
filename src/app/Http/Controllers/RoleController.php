@@ -15,7 +15,7 @@ class RoleController extends Controller
     
     public function index()
     {
-        $roles      = Role::query()->get();
+        $roles      = Role::query()->with('users')->get();
         $actions    = Action::query()->get();
 
         return view('roles.index', compact('roles', 'actions')); 
@@ -43,5 +43,13 @@ class RoleController extends Controller
     }
 
 
+
+
+    public function update(StoreRoleRequest $request, Role $role)
+    {
+        (new RoleService)->update($role, $request->all());
+
+        return redirect()->route('roles.index')->with('alert-success', __('message.role_updated'));
+    }
 
 }
