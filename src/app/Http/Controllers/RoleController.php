@@ -33,6 +33,15 @@ class RoleController extends Controller
 
     }
 
-    
+
+
+    public function edit(Role $role)
+    {
+        $roleActions = $role->actions->pluck('name')->toArray();
+        $actions     = Action::query()->get();
+        return view('roles.edit', compact('role', 'roleActions', 'actions'));
+    }
+
+
 
 }

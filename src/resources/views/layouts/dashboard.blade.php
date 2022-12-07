@@ -231,7 +231,7 @@
             <li class="{{in_array($route, ['users.index'])? 'active' : null}} nav-item"><a class="d-flex align-items-center" href="{{route('dashboard')}}" ><i data-feather="users"></i>
                     <span class="menu-title text-truncate" data-i18n="Documentation">مدیریت کاربران</span></a>
             </li>
-            <li class="{{in_array($route, ['roles.index', 'roles.show'])? 'active' : null}} nav-item"><a class="d-flex align-items-center" href="{{route('dashboard')}}">
+            <li class="{{in_array($route, ['roles.index', 'roles.show'])? 'active' : null}} nav-item"><a class="d-flex align-items-center" href="{{route('roles.index')}}">
                     <i data-feather="life-buoy"></i>
                     <span class="menu-title text-truncate" data-i18n="Raise Support">مدیریت دسترسی ها</span></a>
             </li>
