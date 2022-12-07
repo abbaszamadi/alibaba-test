@@ -23,7 +23,6 @@
                     <input
                       type="number"
                       min="0"
-                      id="first-name-vertical"
                       class="form-control"
                       name="amount"
                       placeholder="مبلغ درخواستی"
@@ -47,7 +46,7 @@
                 </div>
                 <div class="col-12">
                   <div class="mb-1">
-                    <label class="form-label" for="password-vertical">فایل ضمیمه</label>
+                    <label class="form-label" for="password-vertical">  فایل ضمیمه (حداکثر ۱۰MB)</label>
                     <input
                       type="file"
                       id="password-vertical"
