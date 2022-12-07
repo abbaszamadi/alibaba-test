@@ -17,6 +17,7 @@
 
 ### اجرای مقادیر تنظیمات اولیه
 -- پس از نصب لاراول و اجرای migration ها دستور زیر جهت مقدار دهی اولیه action ها باید اجرا شود تا بتوان از سطح دسترسی استفاده کرد.
+- docker-compose run --rm artisan db:seed
 - docker-compose run --rm artisan add_actions
 ### - سیستم authentication
  - از ابزار breeze برای authentication استفاده شده است.
