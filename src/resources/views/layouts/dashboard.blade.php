@@ -248,6 +248,8 @@
         <div class="content-header row">
         </div>
         <div class="content-body">
+
+            <x-alerts></x-alerts>
             <!-- dashboard-assets Analytics Start -->
             @yield('content')
             <!-- dashboard-assets Analytics end -->

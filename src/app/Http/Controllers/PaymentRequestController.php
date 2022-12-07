@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PaymentRequests\StorePaymentRequest;
 use App\Http\Requests\PaymentRequests\UpdatePaymentRequest;
 use App\Models\PaymentRequest;
@@ -43,10 +41,8 @@ class PaymentRequestController extends Controller
     {       
         (new PaymentRequestService)->create($request->user(), $request->all());
 
-        return redirect()->route('payment_requests.index')->with([
-            'result'    => true,
-            'message'   => 'درخواست پرداخت با موفقیت ثبت شد'
-        ]);
+        return redirect()->route('payment_requests.index')
+        ->with('alert-success', __('messages.payment_request_created'));
     }
 
 
@@ -63,13 +59,8 @@ class PaymentRequestController extends Controller
      
         (new PaymentRequestService)->update($paymentRequest, $request->all());
         return redirect(route('payment_requests.show', $paymentRequest->id))
-            ->with([
-                'result'    => true,
-                'message'   => 'آپدیت با موفقیت انجام شد'
-            ]);
+        ->with('alert-success', __('messages.payment_request_updated'));
     }
-
-
 
 
 
@@ -77,9 +68,8 @@ class PaymentRequestController extends Controller
     {
         $paymentRequest->delete();
 
-        return redirect()->route('payment_requests.index')->with([
-            'message'   => 'درخواست با موفقیت حذف شد.'
-        ]);
+        return redirect()->route('payment_requests.index')
+        ->with('alert-success', __('messages.payment_request_deleted'));
 
     }
 
