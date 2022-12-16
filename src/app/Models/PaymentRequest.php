@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Enums\PaymentRequestStatusEnum;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
-use App\Enums\PaymentRequestStatusEnums;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class PaymentRequest extends Model
@@ -16,6 +16,9 @@ class PaymentRequest extends Model
 
     protected $fillable = ['amount', 'status', 'appendix_file', 'user_id', 'creator_id'];
 
+    protected $casts = [
+        'status' => PaymentRequestStatusEnum::class,
+    ];
 
     public function user()
     {
@@ -29,14 +32,14 @@ class PaymentRequest extends Model
     }
 
 
-    public function getStatusTitleAttribute()
-    {
-        return [
-            'CONFIRMED' => 'تایید شده',
-            'REJECTED'  => 'رد شده',
-            'NOT_CHECKED'   => 'در انتظار بررسی'
-        ][$this->status];
-    }
+    // public function getStatusTitleAttribute()
+    // {
+    //     return [
+    //         'CONFIRMED' => 'تایید شده',
+    //         'REJECTED'  => 'رد شده',
+    //         'NOT_CHECKED'   => 'در انتظار بررسی'
+    //     ][$this->status];
+    // }
 
 
     public function getAppendixUrlAttribute()

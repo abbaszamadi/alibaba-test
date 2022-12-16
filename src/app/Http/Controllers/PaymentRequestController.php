@@ -19,7 +19,7 @@ class PaymentRequestController extends Controller
 
     /**
         * Display a listing of the resource.
-        *
+        *   
         * @return Response
         */
 

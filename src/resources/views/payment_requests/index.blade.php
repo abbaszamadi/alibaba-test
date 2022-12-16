@@ -44,14 +44,8 @@
                         </td>
                        
                         <td>
-                            @if($paymentRequest->status == 'CONFIRMED')
-                            <span class="badge rounded-pill badge-light-success me-1">
-                            @elseif($paymentRequest->status == 'REJECTED')
-                            <span class="badge rounded-pill badge-light-danger me-1">
-                            @elseif($paymentRequest->status == 'NOT_CHECKED')
-                            <span class="badge rounded-pill badge-light-secondary me-1">
-                            @endif
-                            {{$paymentRequest->status_title}}
+                            <span class="rounded-pill badge badge-light-{{$paymentRequest->status->colorClass()}} me-1">
+                            {{$paymentRequest->status->toString()}}
                             </span>
                         </td>
                        
